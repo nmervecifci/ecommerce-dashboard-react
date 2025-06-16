@@ -11,11 +11,11 @@
 
 ### Live Demo
 
-**[Demo'yu Dene](https://ecommerce-dashboard-react-beta.vercel.app)**
+🔗 **[Demo'yu Dene](https://ecommerce-dashboard-react-beta.vercel.app)**
 
 ### Video Demo
 
-![Demo Video](./docs/images/demo.gif)
+![Demo Video]()
 _REST ve GraphQL arasında real-time geçiş_
 
 ## 📸 Screenshots
