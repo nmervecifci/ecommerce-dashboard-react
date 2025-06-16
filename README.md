@@ -15,9 +15,6 @@
 
 ### Video Demo
 
-![Demo Video]()
-_REST ve GraphQL arasında real-time geçiş_
-
 ## 📸 Screenshots
 
 ### Ana Dashboard
