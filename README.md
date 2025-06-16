@@ -15,7 +15,8 @@
 
 ### Video Demo
 
-![Demo Video](./docs/images/demo.gif)
+![Demo Video](https://github.com/user-attachments/assets/c148a795-1f88-4cce-8533-a4fccf699a72)
+)
 _REST ve GraphQL arasında real-time geçiş_
 
 ## 📸 Screenshots
