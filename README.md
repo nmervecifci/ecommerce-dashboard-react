@@ -15,11 +15,6 @@
 
 ## 📷 Screenshots
 
-### Ana Dashboard
-
-![Ana Dashboard](./docs/images/dashboard-main.png)
-_Modern responsive tasarım ile ana dashboard görünümü_
-
 ### REST API Modu
 
 ![REST API](https://github.com/user-attachments/assets/3af4a68c-0e8e-495d-9b09-94947c6cc9e7)
