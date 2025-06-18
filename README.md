@@ -244,63 +244,6 @@ Bu proje ile öğrenilenler:
 - ✅ **Performance Optimization** - API comparison
 - ✅ **DevOps** - Deployment strategies
 
-![Learning Path](./docs/images/learning-path.png)
-_Project development journey ve skill progression_
-
-## 🔄 Workflow Screenshots
-
-### Development Process
-
-![Development Workflow](./docs/images/development-workflow.png)
-_VS Code, Git workflow ve debugging process_
-
-### API Testing
-
-![API Testing](./docs/images/api-testing.png)
-_Postman ile API endpoint testing_
-
-### Performance Monitoring
-
-![Performance Dashboard](./docs/images/performance-dashboard.png)
-_Browser DevTools ile performance analysis_
-
-## 🌟 Features in Action
-
-### Real-time API Switching
-
-![API Toggle Demo](./docs/images/api-toggle-demo.gif)
-_Toggle button ile instant API mode değiştirme_
-
-### Responsive Design Demo
-
-![Responsive Demo](./docs/images/responsive-demo.gif)
-_Mobile, tablet, desktop adaptasyonu_
-
-### Performance Metrics
-
-![Performance Metrics](./docs/images/metrics-demo.gif)
-_Real-time performance tracking_
-
-## 📈 Project Stats
-
-### Code Metrics
-
-- **Total Lines**: ~500 LOC
-- **Components**: 1 ana component
-- **API Endpoints**: 2 REST + 1 GraphQL
-- **Database Tables**: 2 tables
-- **Documentation**: 4 detailed docs
-
-### Performance Metrics
-
-- **Lighthouse Score**: 98/100
-- **Bundle Size**: < 200KB
-- **Load Time**: < 2 seconds
-- **API Response**: < 100ms average
-
-![Project Stats](./docs/images/project-stats.png)
-_Code quality ve performance metrikleri_
-
 ## 🚀 Deployment Options
 
 ### Hosting Platforms
@@ -308,15 +251,6 @@ _Code quality ve performance metrikleri_
 - **[Vercel](https://vercel.com)** - Recommended ⭐
 - **[Netlify](https://netlify.com)** - Alternative
 - **[GitHub Pages](https://pages.github.com)** - Free option
-
-### Live Demos
-
-🔗 **[Production Demo](https://sales-dashboard-production.vercel.app)**  
-🔗 **[Staging Demo](https://sales-dashboard-staging.vercel.app)**  
-🔗 **[GitHub Pages](https://yourusername.github.io/sales-dashboard)**
-
-![Deployment Pipeline](./docs/images/deployment-pipeline.png)
-_CI/CD pipeline ve hosting strategy_
 
 ## 🤝 Contributing
 
