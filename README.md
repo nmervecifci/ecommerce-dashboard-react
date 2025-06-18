@@ -19,8 +19,13 @@
 
 ### Ana Dashboard
 
-![Ana Dashboard](./docs/images/dashboard-main.png)
-_Modern responsive tasarım ile ana dashboard görünümü_
+![Ana Dashboard](https://github.com/user-attachments/assets/77298977-b38e-49ec-8068-6d629df4a9c4)
+_Modern tasarım ile ana dashboard görünümü_
+
+### Satış Analytics
+
+![Satış Analytics](link-buraya-gelecek)
+_REST ve GraphQL real-time veri görselleştirme_
 
 ### REST API Modu
 
