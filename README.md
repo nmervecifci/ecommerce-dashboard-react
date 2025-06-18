@@ -184,9 +184,9 @@ query GetDashboardData {
 
 ### Detaylı Dokümantasyon
 
-- 📋 **[Sistem Mimarisi](./docs/architecture.md)** - Kapsamlı mimari dokümantasyonu
-- 🧩 **[Component Dokümantasyonu](./docs/components.md)** - React bileşen detayları
-- 🚀 **[Deployment Rehberi](./docs/deployment.md)** - Step-by-step kurulum
+- 📋 **[Sistem Mimarisi](src/docs/architecture.md)** - Kapsamlı mimari dokümantasyonu
+- 🧩 **[Component Dokümantasyonu](src/docs/components.md)** - React bileşen detayları
+- 🚀 **[Deployment Rehberi](src/docs/deployment.md)** - Step-by-step kurulum
 
 
 ## 🎯 Learning Outcomes
