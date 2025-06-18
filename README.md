@@ -214,16 +214,6 @@ query GetDashboardData {
 - 🧩 **[Component Dokümantasyonu](./docs/components.md)** - React bileşen detayları
 - 🚀 **[Deployment Rehberi](./docs/deployment.md)** - Step-by-step kurulum
 
-### API Documentation
-
-- 📡 **[REST API Endpoints](./docs/api-rest.md)** - REST API referansı
-- ⚡ **[GraphQL Schema](./docs/api-graphql.md)** - GraphQL sorgu örnekleri
-
-### Development Guides
-
-- 🛠️ **[Development Setup](./docs/development.md)** - Geliştirme ortamı kurulumu
-- 🧪 **[Testing Guide](./docs/testing.md)** - Test stratejileri
-- 🔧 **[Troubleshooting](./docs/troubleshooting.md)** - Yaygın sorunlar ve çözümler
 
 ## 🎯 Learning Outcomes
 
@@ -234,7 +224,6 @@ Bu proje ile öğrenilenler:
 - ✅ **React Hooks** - useState, useEffect
 - ✅ **API Integration** - REST ve GraphQL
 - ✅ **Performance Monitoring** - Response time tracking
-- ✅ **Responsive Design** - Tailwind CSS
 - ✅ **Database Design** - PostgreSQL relations
 
 ### Professional Skills
