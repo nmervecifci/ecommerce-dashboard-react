@@ -82,9 +82,6 @@ graph TB
     E --> G[(Sales Table)]
 ```
 
-![Architecture Diagram](./docs/images/architecture-diagram.png)
-_Sistem mimarisi ve veri akışı_
-
 ## ⚡ Performance Comparison
 
 ### API Response Times
@@ -93,9 +90,6 @@ _Sistem mimarisi ve veri akışı_
 | -------- | ------------- | ----------------- | --------------- |
 | REST API | 2 requests    | ~150ms            | Multiple calls  |
 | GraphQL  | 1 request     | ~90ms             | Single query    |
-
-![Performance Chart](./docs/images/performance-chart.png)
-_Real performance metrics from production environment_
 
 
 ## 🚀 Quick Start
