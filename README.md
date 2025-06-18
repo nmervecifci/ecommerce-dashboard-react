@@ -100,21 +100,6 @@ graph TB
 - npm veya yarn
 - Modern web browser
 
-### Installation
-
-```bash
-# Repository'yi klonla
-git clone https://github.com/yourusername/sales-dashboard.git
-
-# Proje klasörüne geç
-cd sales-dashboard
-
-# Bağımlılıkları yükle
-npm install
-
-# Environment variables dosyası oluştur
-cp .env.example .env
-```
 
 ### Environment Setup
 
