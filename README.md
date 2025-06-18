@@ -13,40 +13,22 @@
 
 🔗 **[Demo'yu Dene](https://ecommerce-dashboard-react-beta.vercel.app)**
 
-### Video Demo
-
-## 📸 Screenshots
+## 📷 Screenshots
 
 ### Ana Dashboard
 
-![Ana Dashboard](https://github.com/user-attachments/assets/77298977-b38e-49ec-8068-6d629df4a9c4)
-_Modern tasarım ile ana dashboard görünümü_
-
-### Satış Analytics
-
-![Satış Analytics](link-buraya-gelecek)
-_REST ve GraphQL real-time veri görselleştirme_
+![Ana Dashboard](./docs/images/dashboard-main.png)
+_Modern responsive tasarım ile ana dashboard görünümü_
 
 ### REST API Modu
 
-![REST API](./docs/images/rest-mode.png)
+![REST API](https://github.com/user-attachments/assets/3af4a68c-0e8e-495d-9b09-94947c6cc9e7)
 _REST API modu - 2 HTTP request_
 
 ### GraphQL Modu
 
-![GraphQL API](./docs/images/graphql-mode.png)
+![GraphQL API](https://github.com/user-attachments/assets/6ae91d5e-aa0b-4304-bd39-fe454405a5db)
 _GraphQL modu - 1 tek query_
-
-### Performance Karşılaştırma
-
-![Performance Chart](./docs/images/performance-comparison.png)
-_API response time ve request count karşılaştırması_
-
-### Mobile Responsive
-
-<div align="center">
-  <img src="./docs/images/mobile-view.png" width="300" alt="Mobile Görünüm">
-</div>
 
 ## ✨ Özellikler
 
@@ -58,8 +40,6 @@ _API response time ve request count karşılaştırması_
 - **Performance Monitoring** - Response time ve request count tracking
 
 ### 📱 Modern UI/UX
-
-- **Responsive Design** - Mobile-first approach
 - **Tailwind CSS** - Utility-first styling
 - **Interactive Components** - Dynamic data visualization
 - **Real-time Updates** - Live performance metrics
@@ -122,10 +102,6 @@ _Sistem mimarisi ve veri akışı_
 ![Performance Chart](./docs/images/performance-chart.png)
 _Real performance metrics from production environment_
 
-### Network Traffic
-
-![Network Comparison](./docs/images/network-comparison.png)
-_Network request waterfall comparison_
 
 ## 🚀 Quick Start
 
@@ -192,7 +168,7 @@ CREATE TABLE sales (
 );
 ```
 
-![Database Schema](./docs/images/database-schema.png)
+![Database Schema](https://github.com/user-attachments/assets/f0c8ecba-027a-4e48-944a-d020ef61a21e)
 _Veritabanı ilişki diyagramı_
 
 ## 🔧 API Examples
@@ -229,9 +205,6 @@ query GetDashboardData {
   }
 }
 ```
-
-![API Comparison](./docs/images/api-comparison.png)
-_REST vs GraphQL request/response patterns_
 
 ## 📖 Documentation
 
@@ -357,10 +330,10 @@ Katkıda bulunmak için:
 
 ## 📧 Contact
 
-**Developer**: Your Name  
-**Email**: your.email@example.com  
-**LinkedIn**: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)  
-**Portfolio**: [yourportfolio.com](https://yourportfolio.com)
+**Developer**: Merve Nur Çifci
+**Email**: mervenurcfc42@gmail.com  
+**LinkedIn**:[www.linkedin.com/in/mervenurcifci]  
+
 
 ## 📄 License
 
