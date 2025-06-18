@@ -15,11 +15,6 @@
 
 ## 📷 Screenshots
 
-### Ana Dashboard
-
-![Ana Dashboard](./docs/images/dashboard-main.png)
-_Modern responsive tasarım ile ana dashboard görünümü_
-
 ### REST API Modu
 
 ![REST API](https://github.com/user-attachments/assets/3af4a68c-0e8e-495d-9b09-94947c6cc9e7)
@@ -87,9 +82,6 @@ graph TB
     E --> G[(Sales Table)]
 ```
 
-![Architecture Diagram](./docs/images/architecture-diagram.png)
-_Sistem mimarisi ve veri akışı_
-
 ## ⚡ Performance Comparison
 
 ### API Response Times
@@ -98,9 +90,6 @@ _Sistem mimarisi ve veri akışı_
 | -------- | ------------- | ----------------- | --------------- |
 | REST API | 2 requests    | ~150ms            | Multiple calls  |
 | GraphQL  | 1 request     | ~90ms             | Single query    |
-
-![Performance Chart](./docs/images/performance-chart.png)
-_Real performance metrics from production environment_
 
 
 ## 🚀 Quick Start
@@ -111,21 +100,6 @@ _Real performance metrics from production environment_
 - npm veya yarn
 - Modern web browser
 
-### Installation
-
-```bash
-# Repository'yi klonla
-git clone https://github.com/yourusername/sales-dashboard.git
-
-# Proje klasörüne geç
-cd sales-dashboard
-
-# Bağımlılıkları yükle
-npm install
-
-# Environment variables dosyası oluştur
-cp .env.example .env
-```
 
 ### Environment Setup
 
@@ -210,20 +184,10 @@ query GetDashboardData {
 
 ### Detaylı Dokümantasyon
 
-- 📋 **[Sistem Mimarisi](./docs/architecture.md)** - Kapsamlı mimari dokümantasyonu
-- 🧩 **[Component Dokümantasyonu](./docs/components.md)** - React bileşen detayları
-- 🚀 **[Deployment Rehberi](./docs/deployment.md)** - Step-by-step kurulum
+- 📋 **[Sistem Mimarisi](src/docs/architecture.md)** - Kapsamlı mimari dokümantasyonu
+- 🧩 **[Component Dokümantasyonu](src/docs/components.md)** - React bileşen detayları
+- 🚀 **[Deployment Rehberi](src/docs/deployment.md)** - Step-by-step kurulum
 
-### API Documentation
-
-- 📡 **[REST API Endpoints](./docs/api-rest.md)** - REST API referansı
-- ⚡ **[GraphQL Schema](./docs/api-graphql.md)** - GraphQL sorgu örnekleri
-
-### Development Guides
-
-- 🛠️ **[Development Setup](./docs/development.md)** - Geliştirme ortamı kurulumu
-- 🧪 **[Testing Guide](./docs/testing.md)** - Test stratejileri
-- 🔧 **[Troubleshooting](./docs/troubleshooting.md)** - Yaygın sorunlar ve çözümler
 
 ## 🎯 Learning Outcomes
 
@@ -234,7 +198,6 @@ Bu proje ile öğrenilenler:
 - ✅ **React Hooks** - useState, useEffect
 - ✅ **API Integration** - REST ve GraphQL
 - ✅ **Performance Monitoring** - Response time tracking
-- ✅ **Responsive Design** - Tailwind CSS
 - ✅ **Database Design** - PostgreSQL relations
 
 ### Professional Skills
@@ -244,63 +207,6 @@ Bu proje ile öğrenilenler:
 - ✅ **Performance Optimization** - API comparison
 - ✅ **DevOps** - Deployment strategies
 
-![Learning Path](./docs/images/learning-path.png)
-_Project development journey ve skill progression_
-
-## 🔄 Workflow Screenshots
-
-### Development Process
-
-![Development Workflow](./docs/images/development-workflow.png)
-_VS Code, Git workflow ve debugging process_
-
-### API Testing
-
-![API Testing](./docs/images/api-testing.png)
-_Postman ile API endpoint testing_
-
-### Performance Monitoring
-
-![Performance Dashboard](./docs/images/performance-dashboard.png)
-_Browser DevTools ile performance analysis_
-
-## 🌟 Features in Action
-
-### Real-time API Switching
-
-![API Toggle Demo](./docs/images/api-toggle-demo.gif)
-_Toggle button ile instant API mode değiştirme_
-
-### Responsive Design Demo
-
-![Responsive Demo](./docs/images/responsive-demo.gif)
-_Mobile, tablet, desktop adaptasyonu_
-
-### Performance Metrics
-
-![Performance Metrics](./docs/images/metrics-demo.gif)
-_Real-time performance tracking_
-
-## 📈 Project Stats
-
-### Code Metrics
-
-- **Total Lines**: ~500 LOC
-- **Components**: 1 ana component
-- **API Endpoints**: 2 REST + 1 GraphQL
-- **Database Tables**: 2 tables
-- **Documentation**: 4 detailed docs
-
-### Performance Metrics
-
-- **Lighthouse Score**: 98/100
-- **Bundle Size**: < 200KB
-- **Load Time**: < 2 seconds
-- **API Response**: < 100ms average
-
-![Project Stats](./docs/images/project-stats.png)
-_Code quality ve performance metrikleri_
-
 ## 🚀 Deployment Options
 
 ### Hosting Platforms
@@ -308,15 +214,6 @@ _Code quality ve performance metrikleri_
 - **[Vercel](https://vercel.com)** - Recommended ⭐
 - **[Netlify](https://netlify.com)** - Alternative
 - **[GitHub Pages](https://pages.github.com)** - Free option
-
-### Live Demos
-
-🔗 **[Production Demo](https://sales-dashboard-production.vercel.app)**  
-🔗 **[Staging Demo](https://sales-dashboard-staging.vercel.app)**  
-🔗 **[GitHub Pages](https://yourusername.github.io/sales-dashboard)**
-
-![Deployment Pipeline](./docs/images/deployment-pipeline.png)
-_CI/CD pipeline ve hosting strategy_
 
 ## 🤝 Contributing
 
