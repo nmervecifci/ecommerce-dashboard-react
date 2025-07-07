@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../../src/assets/images/logo.svg";
 import profile from "../../../src/assets/images/profile_icon.png";
 import {
@@ -13,12 +14,79 @@ import {
   Settings,
   Gift,
 } from "lucide-react";
+
 function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
+
+  // Menü items
+  const menuItems = [
+    {
+      id: 1,
+      name: "Dashboard",
+      path: "/dashboard",
+      icon: Home,
+      section: "GENERAL",
+    },
+    {
+      id: 2,
+      name: "Orders",
+      path: "/orders", 
+      icon: ShoppingCart,
+      section: "GENERAL",
+    },
+    {
+      id: 3,
+      name: "Products",
+      path: "/products",
+      icon: Package,
+      section: "GENERAL",
+    },
+    {
+      id: 4,
+      name: "Analytics",
+      path: "/analytics",
+      icon: BarChart3,
+      section: "GENERAL",
+    },
+    {
+      id: 5,
+      name: "Messages",
+      path: "/messages",
+      icon: Mail,
+      section: "GENERAL",
+    },
+    {
+      id: 6,
+      name: "Customer Support",
+      path: "/customer-support",
+      icon: Phone,
+      section: "HELP & SETTINGS",
+    },
+    {
+      id: 7,
+      name: "Settings",
+      path: "/settings",
+      icon: Settings,
+      section: "HELP & SETTINGS",
+    },
+  ];
+
+  // Aktif link kontrolü
+  const isActiveLink = (path) => {
+    return location.pathname === path;
+  };
+
+  // GENERAL items'ları filtrele
+  const generalItems = menuItems.filter(item => item.section === "GENERAL");
+  
+  // HELP & SETTINGS items'ları filtrele
+  const helpSettingsItems = menuItems.filter(item => item.section === "HELP & SETTINGS");
+
   return (
     <>
       {/* Mobile Menu Button */}
@@ -72,56 +140,59 @@ function Sidebar() {
 
         {/* Navigation */}
         <div className="flex-1 px-4 md:px-2 lg:px-4">
-          {/* GENERAL */}
+          {/* GENERAL Section */}
           <p className="text-gray-500 text-xs mb-3 uppercase md:hidden lg:block">
             GENERAL
           </p>
 
-          {[
-            { icon: Home, label: "Dashboard", active: true },
-            { icon: ShoppingCart, label: "Orders" },
-            { icon: Package, label: "Products" },
-            { icon: BarChart3, label: "Analytics" },
-            { icon: Mail, label: "Messages" },
-          ].map((item, index) => {
+          {generalItems.map((item) => {
             const IconComponent = item.icon;
+            const isActive = isActiveLink(item.path);
+            
             return (
-              <div
-                key={index}
+              <Link
+                key={item.id}
+                to={item.path}
+                onClick={() => setIsOpen(false)} // Mobile'da sidebar'ı kapat
                 className={`flex items-center gap-3 p-3 md:p-2 lg:p-3 rounded-lg mb-2 cursor-pointer transition-colors ${
-                  item.active
+                  isActive
                     ? "bg-green-50 text-green-600 border-r-2 border-green-600"
                     : "hover:bg-gray-50 text-gray-600"
                 }`}
               >
                 <IconComponent className="w-5 h-5 md:mx-auto lg:mx-0 flex-shrink-0" />
                 <span className="text-sm font-medium md:hidden lg:block">
-                  {item.label}
+                  {item.name}
                 </span>
-              </div>
+              </Link>
             );
           })}
 
-          {/* HELP & SETTINGS */}
+          {/* HELP & SETTINGS Section */}
           <p className="text-gray-500 text-xs mb-3 uppercase mt-8 md:hidden lg:block">
             Help & Settings
           </p>
 
-          {[
-            { icon: Phone, label: "Customer Support" },
-            { icon: Settings, label: "Settings" },
-          ].map((item, index) => {
+          {helpSettingsItems.map((item) => {
             const IconComponent = item.icon;
+            const isActive = isActiveLink(item.path);
+            
             return (
-              <div
-                key={index}
-                className="flex items-center gap-3 p-3 md:p-2 lg:p-3 rounded-lg mb-2 hover:bg-gray-50 cursor-pointer text-gray-600 transition-colors"
+              <Link
+                key={item.id}
+                to={item.path}
+                onClick={() => setIsOpen(false)} // Mobile'da sidebar'ı kapat
+                className={`flex items-center gap-3 p-3 md:p-2 lg:p-3 rounded-lg mb-2 cursor-pointer transition-colors ${
+                  isActive
+                    ? "bg-green-50 text-green-600 border-r-2 border-green-600"
+                    : "hover:bg-gray-50 text-gray-600"
+                }`}
               >
                 <IconComponent className="w-5 h-5 md:mx-auto lg:mx-0 flex-shrink-0" />
                 <span className="text-sm font-medium md:hidden lg:block">
-                  {item.label}
+                  {item.name}
                 </span>
-              </div>
+              </Link>
             );
           })}
         </div>
