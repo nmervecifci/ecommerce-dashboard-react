@@ -1,4 +1,4 @@
-// src/components/ChatApp.jsx - Güzel Chat Interface
+
 import React, { useState, useEffect, useRef } from "react";
 import io from "socket.io-client";
 
