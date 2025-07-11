@@ -78,7 +78,7 @@ function Orders() {
         "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=100&h=100&fit=crop",
       "Çikolatalı Kek":
         "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=100&h=100&fit=crop",
-      // İngilizce isimler de backward compatibility için
+
       "Fresh Bananas":
         "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=100&h=100&fit=crop",
       "Red Apples":
@@ -93,7 +93,6 @@ function Orders() {
         "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=100&h=100&fit=crop",
     };
 
-    // Category icons - Türkçe kategoriler ile
     const categoryIcons = {
       Meyve: "🍎",
       Sebze: "🥕",
@@ -101,7 +100,7 @@ function Orders() {
       "Süt Ürünleri": "🥛",
       Kahvaltılık: "🥚",
       "Et Ürünleri": "🥩",
-      // İngilizce kategoriler (backward compatibility)
+
       Fruits: "🍎",
       Vegetables: "🥕",
       Bakery: "🍞",
@@ -125,13 +124,11 @@ function Orders() {
       setImageError(false);
     };
 
-    // Get category from item name - Türkçe ürün isimleri ile
     const getCategory = () => {
       if (!name) return "default";
 
       const nameLower = name.toLowerCase();
 
-      // Türkçe ürün isimlerine göre kategori belirleme
       if (
         nameLower.includes("muz") ||
         nameLower.includes("elma") ||
@@ -160,7 +157,6 @@ function Orders() {
       if (nameLower.includes("yumurta") || nameLower.includes("kahvaltı"))
         return "Kahvaltılık";
 
-      // İngilizce fallback (backward compatibility)
       if (nameLower.includes("banana") || nameLower.includes("apple"))
         return "Fruits";
       if (nameLower.includes("carrot") || nameLower.includes("tomato"))
@@ -370,57 +366,62 @@ function Orders() {
 
   return (
     <div>
-      {/* Header */}
-      <div className="border border-neutral-200 p-6 m-6 rounded-lg">
-        <div className="mb-4">
-          <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
+      <div className="border border-neutral-200 p-3 sm:p-4 lg:p-6 m-2 sm:m-4 lg:m-6 rounded-lg">
+        <div className="mb-3 sm:mb-4">
+          <span className="bg-purple-100 text-purple-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">
             🔧 Redux Toolkit + Supabase - Orders Management
           </span>
         </div>
-        <div className="flex items-center justify-between mb-6">
-          <h1 className="text-2xl font-bold text-gray-900">Order Details</h1>
-          <div className="flex gap-2">
-            <Button
-              onClick={handleRefresh}
-              variant="outline"
-              size="sm"
-              disabled={loading}
-            >
-              {loading ? "Refreshing..." : "Refresh"}
-            </Button>
-            {error && (
+
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
+          <div className="flex-1">
+            <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2">
+              Orders Management
+            </h1>
+            <div className="flex flex-wrap gap-2 text-xs sm:text-sm">
               <Button
-                onClick={handleClearError}
+                onClick={handleRefresh}
                 variant="outline"
                 size="sm"
-                className="text-red-600 border-red-200"
+                disabled={loading}
+                className="text-xs px-2 sm:px-3"
               >
-                Clear Error
+                {loading ? "Refreshing..." : "Refresh"}
               </Button>
-            )}
+              {error && (
+                <Button
+                  onClick={handleClearError}
+                  variant="outline"
+                  size="sm"
+                  className="text-red-600 border-red-200 text-xs px-2 sm:px-3"
+                >
+                  Clear Error
+                </Button>
+              )}
+            </div>
           </div>
         </div>
 
         {/* Error Display */}
         {error && (
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-4">
-            <p className="text-red-800 text-sm">
+          <div className="bg-red-50 border border-red-200 rounded-lg p-3 sm:p-4 mt-3 sm:mt-4">
+            <p className="text-red-800 text-xs sm:text-sm">
               <strong>Error:</strong> {error}
             </p>
           </div>
         )}
       </div>
 
-      {/* Main Content - Flex Container */}
-      <div className="flex gap-6 mx-6">
-        {/* Sol taraf - Order Details */}
-        <div className="flex-1">
+      <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 mx-2 sm:mx-4 lg:mx-6">
+        <div className="flex-1 min-w-0">
           <Card>
             <CardHeader>
-              <div className="flex items-center justify-between">
-                <div>
-                  <CardTitle>Order Number {currentOrderNumber}</CardTitle>
-                  <CardDescription>
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4">
+                <div className="flex-1 min-w-0">
+                  <CardTitle className="text-base sm:text-lg lg:text-xl">
+                    Order Number {currentOrderNumber}
+                  </CardTitle>
+                  <CardDescription className="text-xs sm:text-sm">
                     Order details and management • {itemsCount} items
                     {currentOrder?.status && (
                       <span
@@ -440,59 +441,63 @@ function Orders() {
                   </CardDescription>
                 </div>
 
-                {/* Action Buttons */}
-                <div className="flex items-center gap-3">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3 w-full sm:w-auto">
                   <Button
                     variant="outline"
                     size="sm"
-                    className="bg-green-500 hover:bg-green-600 text-white border-green-500"
+                    className="bg-green-500 hover:bg-green-600 text-white border-green-500 text-xs sm:text-sm"
                     onClick={handleMessageCustomer}
                     disabled={!currentOrder}
                   >
-                    <PiEnvelopeSimpleThin className="w-4 h-4" />
-                    Message Customer
+                    <PiEnvelopeSimpleThin className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                    <span className="hidden sm:inline">Message Customer</span>
+                    <span className="sm:hidden">Message</span>
                   </Button>
 
                   <Button
                     variant="outline"
                     size="sm"
-                    className="bg-blue-500 hover:bg-blue-600 text-white border-blue-500"
+                    className="bg-blue-500 hover:bg-blue-600 text-white border-blue-500 text-xs sm:text-sm"
                     onClick={handleUpdateStatus}
                     disabled={!currentOrder}
                   >
-                    <PiMapPinThin className="w-4 h-4" />
-                    Update Status
+                    <PiMapPinThin className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                    <span className="hidden sm:inline">Update Status</span>
+                    <span className="sm:hidden">Update</span>
                   </Button>
 
                   <Button
                     variant="outline"
                     size="sm"
-                    className="bg-orange-500 hover:bg-orange-600 text-white border-orange-500"
+                    className="bg-orange-500 hover:bg-orange-600 text-white border-orange-500 text-xs sm:text-sm"
                     onClick={handlePrintInvoice}
                     disabled={!currentOrder}
                   >
-                    <PiInvoiceThin className="w-4 h-4" />
-                    Print Invoice
+                    <PiInvoiceThin className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                    <span className="hidden sm:inline">Print Invoice</span>
+                    <span className="sm:hidden">Print</span>
                   </Button>
                 </div>
               </div>
             </CardHeader>
 
-            <CardContent>
+            <CardContent className="p-3 sm:p-4 lg:p-6">
               {currentOrder?.order_items?.map((item) => (
-                <Card key={item.id} className="mb-4 p-4">
-                  <div className="flex items-center justify-between">
+                <Card key={item.id} className="mb-3 sm:mb-4 p-3 sm:p-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
                     {/* Product Info */}
-                    <div className="flex gap-4 items-center">
+                    <div className="flex gap-3 sm:gap-4 items-start sm:items-center flex-1 min-w-0">
                       <ProductImage
                         src={item.image_url}
                         alt={item.name}
                         name={item.name}
                       />
 
-                      <div>
-                        <h3 className="font-semibold text-lg">{item.name}</h3>
-                        <p className="text-gray-600 text-sm">
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-semibold text-sm sm:text-base lg:text-lg truncate">
+                          {item.name}
+                        </h3>
+                        <p className="text-gray-600 text-xs sm:text-sm line-clamp-2 sm:line-clamp-1">
                           {item.description}
                         </p>
                         <span className="inline-block bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs mt-1">
@@ -501,74 +506,80 @@ function Orders() {
                       </div>
                     </div>
 
-                    {/* Quantity & Price with Controls */}
-                    <div className="text-right">
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="text-sm text-gray-600">Quantity:</span>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 shrink-0">
+                      {/* Quantity Controls */}
+                      <div className="flex items-center justify-between sm:justify-start gap-2">
+                        <span className="text-xs sm:text-sm text-gray-600">
+                          Qty:
+                        </span>
                         <div className="flex items-center gap-1">
                           <button
                             onClick={() =>
                               handleQuantityChange(item.id, item.quantity - 1)
                             }
-                            className="w-6 h-6 rounded bg-gray-200 hover:bg-gray-300 flex items-center justify-center text-sm disabled:opacity-50"
+                            className="w-6 h-6 sm:w-8 sm:h-8 rounded bg-gray-200 hover:bg-gray-300 flex items-center justify-center text-sm disabled:opacity-50"
                             disabled={item.quantity <= 1}
                           >
                             -
                           </button>
-                          <span className="font-medium px-2 min-w-[30px] text-center">
+                          <span className="font-medium px-2 min-w-[30px] text-center text-sm sm:text-base">
                             {item.quantity}
                           </span>
                           <button
                             onClick={() =>
                               handleQuantityChange(item.id, item.quantity + 1)
                             }
-                            className="w-6 h-6 rounded bg-gray-200 hover:bg-gray-300 flex items-center justify-center text-sm"
+                            className="w-6 h-6 sm:w-8 sm:h-8 rounded bg-gray-200 hover:bg-gray-300 flex items-center justify-center text-sm"
                           >
                             +
                           </button>
                         </div>
                       </div>
-                      <p className="text-sm text-gray-600">
-                        Unit Price:{" "}
-                        <span className="font-medium">${item.price}</span>
-                      </p>
-                      <p className="text-lg font-bold text-green-600">
-                        Total: ${(item.price * item.quantity).toFixed(2)}
-                      </p>
-                      <button
-                        onClick={() => handleRemoveItem(item.id)}
-                        className="text-xs text-red-500 hover:text-red-700 mt-1"
-                      >
-                        Remove Item
-                      </button>
+
+                      {/* Price Info */}
+                      <div className="text-right sm:text-left">
+                        <p className="text-xs sm:text-sm text-gray-600">
+                          Unit:{" "}
+                          <span className="font-medium">${item.price}</span>
+                        </p>
+                        <p className="text-sm sm:text-lg font-bold text-green-600">
+                          Total: ${(item.price * item.quantity).toFixed(2)}
+                        </p>
+                        <button
+                          onClick={() => handleRemoveItem(item.id)}
+                          className="text-xs text-red-500 hover:text-red-700 mt-1"
+                        >
+                          Remove
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </Card>
               ))}
 
-              {/* Empty state */}
               {!currentOrder?.order_items?.length && (
-                <div className="text-center py-8 text-gray-500">
-                  <p>No items in this order</p>
+                <div className="text-center py-6 sm:py-8 text-gray-500">
+                  <p className="text-sm sm:text-base">No items in this order</p>
                 </div>
               )}
 
-              {/* Order Summary */}
               {currentOrder?.order_items?.length > 0 && (
-                <Card className="mt-6 bg-gray-50">
-                  <CardContent className="p-4">
-                    <div className="flex justify-between items-center">
+                <Card className="mt-4 sm:mt-6 bg-gray-50">
+                  <CardContent className="p-3 sm:p-4">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-4">
                       <div>
-                        <h3 className="text-lg font-semibold">Order Summary</h3>
-                        <p className="text-gray-600">
+                        <h3 className="text-base sm:text-lg font-semibold">
+                          Order Summary
+                        </h3>
+                        <p className="text-gray-600 text-xs sm:text-sm">
                           {itemsCount} items total
                         </p>
                       </div>
-                      <div className="text-right">
-                        <p className="text-2xl font-bold text-green-600">
+                      <div className="text-left sm:text-right">
+                        <p className="text-lg sm:text-2xl font-bold text-green-600">
                           Grand Total: ${totalAmount.toFixed(2)}
                         </p>
-                        <p className="text-sm text-gray-600">
+                        <p className="text-xs sm:text-sm text-gray-600">
                           Including taxes and fees
                         </p>
                       </div>
@@ -579,45 +590,54 @@ function Orders() {
             </CardContent>
           </Card>
         </div>
-
-        {/* Sağ taraf - Activity */}
-        <div className="w-80">
+        <div className="w-full lg:w-80 lg:shrink-0">
           <Card>
-            <CardHeader>
-              <CardTitle>
+            <CardHeader className="p-3 sm:p-4 lg:p-6">
+              <CardTitle className="text-base sm:text-lg">
                 Activity
                 {fetchingActivities && (
-                  <span className="ml-2 text-sm text-gray-500">Loading...</span>
+                  <span className="ml-2 text-xs sm:text-sm text-gray-500">
+                    Loading...
+                  </span>
                 )}
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="p-3 sm:p-4 lg:p-6">
               {orderActivities.length > 0 ? (
-                orderActivities.map((activity) => (
-                  <div
-                    key={activity.id}
-                    className="flex items-center gap-3 mb-3"
-                  >
-                    <FaCheckCircle className="text-green-500 flex-shrink-0" />
-                    <div className="min-w-0 flex-1">
-                      <p className="font-medium truncate">{activity.title}</p>
-                      <p className="text-xs text-gray-500 truncate">
-                        {activity.description}
-                      </p>
-                      <p className="text-xs text-gray-400">
-                        {new Date(activity.created_at).toLocaleString()}
-                      </p>
+                <div className="space-y-3 max-h-60 sm:max-h-80 lg:max-h-96 overflow-y-auto">
+                  {orderActivities.map((activity) => (
+                    <div
+                      key={activity.id}
+                      className="flex items-start gap-3 p-2 sm:p-3 bg-gray-50 rounded-lg"
+                    >
+                      <FaCheckCircle
+                        className="text-green-500 flex-shrink-0 mt-1"
+                        size={14}
+                      />
+                      <div className="min-w-0 flex-1">
+                        <p className="font-medium text-xs sm:text-sm line-clamp-2">
+                          {activity.title}
+                        </p>
+                        <p className="text-xs text-gray-500 line-clamp-2 mt-1">
+                          {activity.description}
+                        </p>
+                        <p className="text-xs text-gray-400 mt-1">
+                          {new Date(activity.created_at).toLocaleString()}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                ))
+                  ))}
+                </div>
               ) : (
-                <div className="text-center py-4 text-gray-500">
-                  <p className="text-sm">No activities yet</p>
+                <div className="text-center py-6 sm:py-8 text-gray-500">
+                  <p className="text-xs sm:text-sm">No activities yet</p>
                 </div>
               )}
             </CardContent>
-            <CardFooter>
-              <p className="text-sm text-gray-500">Order tracking timeline</p>
+            <CardFooter className="p-3 sm:p-4 lg:p-6">
+              <p className="text-xs sm:text-sm text-gray-500">
+                Order tracking timeline
+              </p>
             </CardFooter>
           </Card>
         </div>
