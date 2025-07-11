@@ -177,23 +177,19 @@ const ordersSlice = createSlice({
   name: "orders",
   initialState,
   reducers: {
-    // Set current order number
     setCurrentOrderNumber: (state, action) => {
       state.currentOrderNumber = action.payload;
     },
 
-    // Clear error
     clearError: (state) => {
       state.error = null;
     },
 
-    // Clear orders (for logout etc.)
     clearOrders: (state) => {
       state.orders = [];
       state.orderActivities = [];
     },
 
-    // Optimistic update for quantity (for immediate UI feedback)
     updateQuantityOptimistic: (state, action) => {
       const { itemId, quantity } = action.payload;
       const order = state.orders.find((order) =>
@@ -209,7 +205,7 @@ const ordersSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      // Fetch orders
+
       .addCase(fetchOrders.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -223,14 +219,13 @@ const ordersSlice = createSlice({
         state.error = action.payload;
       })
 
-      // Fetch single order
       .addCase(fetchOrderById.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
       .addCase(fetchOrderById.fulfilled, (state, action) => {
         state.loading = false;
-        // Update existing order or add new one
+
         const existingIndex = state.orders.findIndex(
           (order) => order.id === action.payload.id
         );
@@ -245,7 +240,6 @@ const ordersSlice = createSlice({
         state.error = action.payload;
       })
 
-      // Fetch order activities
       .addCase(fetchOrderActivities.pending, (state) => {
         state.fetchingActivities = true;
       })
@@ -258,7 +252,6 @@ const ordersSlice = createSlice({
         state.error = action.payload;
       })
 
-      // Create order
       .addCase(createOrder.pending, (state) => {
         state.loading = true;
       })
@@ -271,7 +264,6 @@ const ordersSlice = createSlice({
         state.error = action.payload;
       })
 
-      // Update order item quantity
       .addCase(updateOrderItemQuantity.fulfilled, (state, action) => {
         const updatedItem = action.payload;
         const order = state.orders.find((order) =>
@@ -290,7 +282,6 @@ const ordersSlice = createSlice({
         state.error = action.payload;
       })
 
-      // Remove order item
       .addCase(removeOrderItem.fulfilled, (state, action) => {
         const itemId = action.payload;
         state.orders.forEach((order) => {
@@ -305,7 +296,6 @@ const ordersSlice = createSlice({
         state.error = action.payload;
       })
 
-      // Update order status
       .addCase(updateOrderStatus.fulfilled, (state, action) => {
         const updatedOrder = action.payload;
         const orderIndex = state.orders.findIndex(
@@ -322,7 +312,6 @@ const ordersSlice = createSlice({
         state.error = action.payload;
       })
 
-      // Add order activity
       .addCase(addOrderActivity.fulfilled, (state, action) => {
         state.orderActivities.unshift(action.payload); // Add to beginning
       })
@@ -332,7 +321,6 @@ const ordersSlice = createSlice({
   },
 });
 
-// Export actions
 export const {
   setCurrentOrderNumber,
   clearError,
@@ -340,7 +328,6 @@ export const {
   updateQuantityOptimistic,
 } = ordersSlice.actions;
 
-// Selectors
 export const selectOrders = (state) => state.orders.orders;
 export const selectOrderActivities = (state) => state.orders.orderActivities;
 export const selectCurrentOrderNumber = (state) =>
@@ -350,7 +337,6 @@ export const selectOrdersError = (state) => state.orders.error;
 export const selectFetchingActivities = (state) =>
   state.orders.fetchingActivities;
 
-// Get current order selector
 export const selectCurrentOrder = (state) => {
   const currentOrderNumber = state.orders.currentOrderNumber;
   return state.orders.orders.find(
@@ -358,7 +344,6 @@ export const selectCurrentOrder = (state) => {
   );
 };
 
-// Calculate total amount selector
 export const selectOrdersTotalAmount = (state) => {
   const currentOrder = selectCurrentOrder(state);
   if (!currentOrder?.order_items) return 0;
@@ -368,12 +353,10 @@ export const selectOrdersTotalAmount = (state) => {
   }, 0);
 };
 
-// Get orders by status selector
 export const selectOrdersByStatus = (state) => (status) => {
   return state.orders.orders.filter((order) => order.status === status);
 };
 
-// Get items count selector
 export const selectOrderItemsCount = (state) => {
   const currentOrder = selectCurrentOrder(state);
   return currentOrder?.order_items?.length || 0;
